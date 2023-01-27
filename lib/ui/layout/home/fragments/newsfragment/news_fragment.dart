@@ -17,7 +17,12 @@ class News_Layout extends StatelessWidget {
           future: ApiManager.getTabs(categoryId!),
             builder:(_,snapShot){
             if(snapShot.hasError){
-              return Text(snapShot.error.toString());
+              return Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Center(child: Text(snapShot.error.toString(),
+                  style:Theme.of(context).textTheme.headline2 ,
+                )),
+              );
             }
             else if(snapShot.connectionState == ConnectionState.waiting){
               return Center(child: CircularProgressIndicator());
