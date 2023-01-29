@@ -82,8 +82,6 @@ class _SearchWidgetState extends State<SearchWidget> {
         ),
       ),
     );
-
-
   }
 
   List search(){
