@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:news/shared/styles/mytheme.dart';
+import 'package:news/ui/layout/home/fragments/newsfragment/news_details.dart';
 import 'package:news/ui/layout/home/home_layout.dart';
 import 'package:news/ui/layout/home/fragments/newsfragment/news_fragment.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes:
       {
         HomeLayout.routname:(context) => HomeLayout(),
+        NewsDetails.routeName:(context)=> NewsDetails(),
       },
       initialRoute: HomeLayout.routname,
       theme: mytheme.Light,
