@@ -15,6 +15,7 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
  late Widget Selectedfragment;
  CategoryDm? selectedCategory = null;
+ final scaffoldKey = GlobalKey<ScaffoldState>();
 
   onCategoryClicked(CategoryDm newSelectedCategory){
     selectedCategory = newSelectedCategory;
@@ -36,15 +37,36 @@ class _HomeLayoutState extends State<HomeLayout> {
         ),
       ),
       child: Scaffold(
+        key: scaffoldKey,
         appBar: AppBar(
           title: Text('News App',style: Theme.of(context).textTheme.headline1),
           centerTitle: true,
           toolbarHeight: 70,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
+          leading: IconButton(onPressed: ()
+          {
+            if(scaffoldKey.currentState!.isDrawerOpen){
+              scaffoldKey.currentState!.closeDrawer();
+              //close drawer, if drawer is open
+            }else{
+              scaffoldKey.currentState!.openDrawer();
+              //open drawer, if drawer is closed
+            }
+
+          },
+              icon: Icon(Icons.menu,size: 40,color: Colors.white,),
+          ),
+          actions: [
+            IconButton(onPressed: ()
+            {
+
+            },
+              icon: Icon(Icons.search,size: 40,color: Colors.white,),
+            ),
+          ],
         ),
 
         drawer: Drawer(
-
           child: Container(
             width: MediaQuery.of(context).size.height*0.37,
             color: Theme.of(context).colorScheme.secondary,
