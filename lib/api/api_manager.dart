@@ -14,7 +14,7 @@ static Future<TapsResponse> getTabs(String categoryId) async{
   return tabsResponse;
 }
 
-static Future<NewsResponse> getNews(String TabId) async{
+static Future<NewsResponse> getNews(String? TabId  ) async{
 
   var response  = await http.get(Uri.parse("$baseUrl/v2/everything?apiKey=$apiKey&sources=$TabId"));
   var json = jsonDecode(response.body);
@@ -24,7 +24,13 @@ static Future<NewsResponse> getNews(String TabId) async{
 
 
 
+static Future<NewsResponse> getsearch(String? query) async{
 
+  var response  = await http.get(Uri.parse("$baseUrl/v2/everything?apiKey=$apiKey&q=$query"));
+  var json = jsonDecode(response.body);
+  NewsResponse newsresponse = NewsResponse.fromJson(json);
+  return newsresponse;
+}
 
 
 }

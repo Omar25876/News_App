@@ -24,14 +24,14 @@ class CategoryDm{
   title: 'Sports', id: "sports",
   backgroundColor: Colors.red[900]!,
   imgePath: "assets/ball.png",
-  isleftSided: true
+  isleftSided: true,
   ),
 
   CategoryDm(
   title: 'Technology', id: "technology",
   backgroundColor: Colors.blue[900]!,
   imgePath: "assets/Politics.png",
-  isleftSided: true
+  isleftSided: false
   ),
 
   CategoryDm(
@@ -45,7 +45,7 @@ class CategoryDm{
   title: 'Business', id: "business",
   backgroundColor: Colors.orange[900]!,
   imgePath: "assets/bussines.png",
-  isleftSided: true
+  isleftSided: false
   ),
 
 
@@ -61,7 +61,7 @@ class CategoryDm{
   title: 'Science', id: "science",
   backgroundColor: Colors.yellow[500]!,
   imgePath: "assets/science.png",
-  isleftSided: true
+  isleftSided: false
   ),
 
 
