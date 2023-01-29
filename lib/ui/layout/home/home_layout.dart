@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news/models/category_dm.dart';
 import 'package:news/shared/styles/mytheme.dart';
 import 'package:news/ui/layout/home/fragments/newsfragment/news_fragment.dart';
+import 'package:news/ui/layout/home/fragments/newsfragment/search_widget.dart';
 import 'fragments/categories/categories_fragment.dart';
 import 'fragments/settings/settings_fragment.dart';
 
@@ -57,12 +58,15 @@ class _HomeLayoutState extends State<HomeLayout> {
               icon: Icon(Icons.menu,size: 40,color: Colors.white,),
           ),
           actions: [
-            IconButton(onPressed: ()
-            {
-
-            },
-              icon: Icon(Icons.search,size: 40,color: Colors.white,),
-            ),
+            selectedCategory != null? Padding(
+              padding: EdgeInsets.only(right: 10),
+              child: IconButton(onPressed: ()
+              {
+                Navigator.pushNamed(context, SearchWidget.routeName);
+              },
+                icon: Icon(Icons.search,size: 32,color: Colors.white,),
+              ),
+            ) : SizedBox(),
           ],
         ),
 
